@@ -1,8 +1,23 @@
 import { numGraph } from "./data.js";
 
-const connectedComponentCount = (graph) => {
-  // iterate over all nodes
-  // 
+const connectedComponentsCount = (graph) => {
+  let islands = 0;
+  const visited = new Set();
+  for (const node in graph) {
+    if (explore(graph, node, visited)) {
+      islands++;
+    }
+  }
+  return islands;
 };
 
-console.log(connectedComponentCount(numGraph));
+const explore = (graph, node, visited) => {
+  if (visited.has(String(node))) return false;
+  visited.add(String(node));
+  for (const neigh of graph[node]) {
+    explore(graph, neigh, visited);
+  }
+  return true;
+};
+
+console.log(connectedComponentsCount(numGraph));
