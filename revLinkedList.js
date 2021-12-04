@@ -5,14 +5,14 @@ class LinkNode {
   }
 }
 
-const a = new LinkNode("a");
-const b = new LinkNode("b");
-const c = new LinkNode("c");
-const d = new LinkNode("d");
+const node1 = new LinkNode("one");
+const node2 = new LinkNode("two");
+const node3 = new LinkNode("three");
+const node4 = new LinkNode("four");
 
-a.next = b;
-b.next = c;
-c.next = d;
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
 
 const printList = (head) => {
   if (!head) return;
@@ -20,34 +20,14 @@ const printList = (head) => {
   printList(head.next);
 };
 
-printList(a);
-console.log("----------------------------------------->");
+console.log(printList(node1));
+console.log("--------------------");
 
-// Iterative solution
-// const reverseList = (head) => {
-//   let currentNode = head;
-//   let previousNode = null;
-
-//   while (currentNode) {
-//     const next = currentNode.next;
-//     currentNode.next = previousNode;
-
-//     previousNode = currentNode;
-//     currentNode = next;
-//   }
-
-//   return previousNode;
-// };
-
-// Recursive solution
-const reverseList = (head, previousNode = null) => {
-  // base case
-  if (!head) return previousNode;
+const revList = (head, prev = null) => {
+  if (!head) return prev;
   const next = head.next;
-  head.next = previousNode;
-  return reverseList(next, head);
+  head.next = prev;
+  return revList(next, head);
 };
 
-const reversedList = reverseList(a);
-
-printList(reversedList);
+console.log(printList(revList(node1)));
