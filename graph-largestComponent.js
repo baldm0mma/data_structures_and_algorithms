@@ -1,4 +1,4 @@
-import { numGraph } from "./data.js";
+import { numGraph } from "./graphData.js";
 
 const largesComponent = (graph) => {
   const visited = new Set();

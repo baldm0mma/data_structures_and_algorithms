@@ -1,4 +1,4 @@
-import { grid } from "./data.js";
+import { grid } from "./graphData.js";
 
 const islandCount = (grid) => {
   const visited = new Set();

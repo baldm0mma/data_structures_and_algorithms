@@ -1,4 +1,4 @@
-import { edges2 } from "./data.js";
+import { edges2 } from "./graphData.js";
 
 const shortestPath = (edges, src, dest) => {
   const graph = buildGraph(edges);

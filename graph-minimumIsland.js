@@ -1,4 +1,4 @@
-import { grid } from "./data.js";
+import { grid } from "./graphData.js";
 
 const minimumIsland = (grid) => {
   // iterate through all grid indexes

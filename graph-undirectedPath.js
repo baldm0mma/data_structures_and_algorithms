@@ -1,4 +1,4 @@
-import { edges1 } from "./data.js";
+import { edges1 } from "./graphData.js";
 
 const undirectedPath = (edges, nodeA, nodeB) => {
   const graph = buildGraph(edges);

@@ -23,11 +23,11 @@ const printList = (head) => {
 console.log(printList(node1));
 console.log("--------------------");
 
-const revList = (head, prev = null) => {
-  if (!head) return prev;
-  const next = head.next;
-  head.next = prev;
-  return revList(next, head);
+const revList = (curr, prev = null) => {
+  if (!curr) return prev;
+  const next = curr.next;
+  curr.next = prev;
+  return revList(next, curr);
 };
 
 console.log(printList(revList(node1)));
